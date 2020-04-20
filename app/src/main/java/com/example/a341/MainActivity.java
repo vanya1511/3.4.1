@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    Bitmap bmp;
+    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +35,19 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            bmp = BitmapFactory.decodeStream(stream);
+            bitmap = BitmapFactory.decodeStream(stream);
             return null;
         }
 
         @Override
         protected void onPreExecute() {
-            imgView = findViewById(R.id.ImageView01);
+            imgView = findViewById(R.id.img);
             super.onPreExecute();
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
-            imgView.setImageBitmap(bmp);
+            imgView.setImageBitmap(bitmap);
             super.onPostExecute(aVoid);
         }
     }
